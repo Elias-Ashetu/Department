@@ -1,0 +1,177 @@
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  margin-top: auto;
+}
+
+/* Main Footer Container */
+
+.footer-container {
+  width: 92%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: 2.2fr 0.8fr 0.8fr 1.4fr;
+  gap: 35px;
+}
+
+/* =========================
+   UNIVERSITY BRAND
+========================= */
+
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.footer-logo-section h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.5;
+}
+
+.footer-logo-section span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.4px;
+  color: #b8d5e1;
+}
+
+.footer-description {
+  margin-top: 18px;
+  margin-left: 56px;
+  max-width: 330px;
+  color: #b8cbd5;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-contact p {
+  color: #b8cbd5;
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--secondary-color);
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 3%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.footer-bottom p,
+.footer-bottom span {
+  font-size: 9px;
+  color: #91aab8;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+  .footer-container {
+    width: 90%;
+    padding: 35px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-description {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 5%;
+    gap: 5px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,229 @@
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  width: 96%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.university-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.brand-text h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.4;
+}
+
+.brand-text span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  color: #b8d5e1;
+}
+
+/* =========================
+   NAVIGATION MENU
+========================= */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  height: 100%;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #d0dce3;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active-link {
+  color: #ffffff;
+}
+
+/* Active link underline */
+
+.nav-link.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: 13px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.navbar-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 19px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-login:hover {
+  background-color: #0086a1;
+  transform: translateY(-2px);
+}
+
+.navbar-login span {
+  font-size: 18px;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .brand-text h2 {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: 65px;
+  }
+
+  .navbar-container {
+    width: 94%;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 5% 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    height: auto;
+    padding: 13px 0;
+    font-size: 14px;
+  }
+
+  .nav-link.active-link::after {
+    bottom: 5px;
+    width: 35px;
+  }
+
+  .navbar-login {
+    width: fit-content;
+    margin-top: 12px;
+  }
+
+  .university-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text h2 {
+    font-size: 14px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+  }
+}
