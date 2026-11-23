@@ -1,0 +1,282 @@
+
+
+/* Main Page */
+.user-management {
+  width: 100%;
+  color: #183b36;
+}
+
+.user-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.user-page-header h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.user-page-header p {
+  color: #777;
+  font-size: 14px;
+}
+
+.add-user-btn,
+.create-btn {
+  background: #183b36;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.add-user-btn:hover,
+.create-btn:hover {
+  background: #28574e;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Information Cards */
+.user-info-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.user-info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e8eceb;
+}
+
+.user-info-card span {
+  color: #777;
+  font-size: 14px;
+}
+
+.user-info-card h2 {
+  margin: 15px 0 8px;
+  font-size: 25px;
+}
+
+.user-info-card p {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Modal Background */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Modal */
+.user-modal {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+}
+
+.modal-header p {
+  color: #888;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 27px;
+  cursor: pointer;
+  color: #777;
+}
+
+/* Form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group label,
+.temporary-password label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #183b36;
+}
+
+.form-error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.cancel-btn {
+  background: #edf0ef;
+  color: #333;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Success Modal */
+.success-modal {
+  text-align: center;
+}
+
+.success-icon {
+  width: 55px;
+  height: 55px;
+  background: #e3f5e9;
+  color: #168344;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  margin: 0 auto 15px;
+}
+
+.success-message {
+  color: #888;
+  margin: 10px 0 20px;
+  font-size: 14px;
+}
+
+/* Account Details */
+.account-details {
+  background: #f6f8f7;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.account-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid #e5e9e7;
+}
+
+.account-details div:last-child {
+  border-bottom: none;
+}
+
+.account-details span {
+  color: #777;
+  font-size: 13px;
+}
+
+.account-details strong {
+  font-size: 13px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.temporary-password {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.password-box input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  background: #f9faf9;
+  font-size: 14px;
+}
+
+.password-warning {
+  color: #956b18;
+  background: #fff8e7;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .user-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .user-info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .user-modal {
+    padding: 20px;
+  }
+
+  .account-details div {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .modal-actions {
+    flex-wrap: wrap;
+  }
+}

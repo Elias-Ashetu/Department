@@ -1,0 +1,503 @@
+
+/* ==============================
+   GENERAL LOGIN PAGE
+================================ */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(4, 39, 30, 0.88),
+      rgba(4, 39, 30, 0.88)
+    ),
+    url("/public/logo.jpeg") center/cover no-repeat;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(7px);
+  background: rgba(3, 35, 47, 0.25);
+}
+
+/* ==============================
+   LOGIN MODAL
+================================ */
+
+.login-modal {
+  width: 100%;
+  max-width: 690px;
+  min-height: 435px;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  position: relative;
+  z-index: 1;
+
+  border-radius: 17px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ==============================
+   LEFT BRANDING PANEL
+================================ */
+
+.login-brand {
+  background: #12394a;
+  color: white;
+
+  padding: 27px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.login-brand::before,
+.login-brand::after {
+  content: "";
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.login-brand::before {
+  width: 320px;
+  height: 320px;
+  right: -205px;
+  top: 115px;
+}
+
+.login-brand::after {
+  width: 210px;
+  height: 210px;
+  right: -150px;
+  top: 160px;
+}
+
+/* University branding */
+
+.university-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.university-logo {
+  width: 39px;
+  height: 39px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.university-info h3 {
+  font-size: 12px;
+  margin: 0 0 3px;
+  font-weight: 700;
+}
+
+.university-info span {
+  display: block;
+  font-size: 7px;
+  color: #9db2bd;
+  font-weight: 600;
+}
+
+/* Branding message */
+
+.brand-message {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.brand-tagline {
+  color: #58c6d9;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand-message h1 {
+  font-size: 26px;
+  line-height: 1.18;
+  font-weight: 500;
+
+  margin: 13px 0;
+
+  letter-spacing: -0.8px;
+}
+
+.brand-message p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #c0d0d7;
+  max-width: 260px;
+}
+
+/* Branding footer */
+
+.brand-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-footer p {
+  color: #d0dce1;
+  font-size: 10px;
+  line-height: 1.5;
+  max-width: 220px;
+  margin-bottom: 7px;
+}
+
+.brand-footer strong {
+  color: #59c5d7;
+  font-size: 10px;
+}
+
+/* ==============================
+   RIGHT LOGIN PANEL
+================================ */
+
+.login-form-panel {
+  background: #fff;
+  padding: 40px 48px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Close button */
+
+.login-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 27px;
+  height: 27px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f4f8;
+  color: #64748b;
+
+  font-size: 21px;
+  cursor: pointer;
+}
+
+/* Form content */
+
+.login-content {
+  width: 100%;
+  max-width: 285px;
+}
+
+.login-icon {
+  width: 34px;
+  height: 34px;
+
+  background: #e6f7fa;
+  color: #009cbd;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.login-content h2 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #183d50;
+
+  margin: 0 0 7px;
+}
+
+.login-subtitle {
+  color: #73839a;
+  font-size: 9px;
+  margin-bottom: 29p
+  x;
+}
+
+/* ==============================
+   INPUT FIELDS
+================================ */
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+
+  font-size: 9px;
+  font-weight: 700;
+  color: #263849;
+
+  margin-bottom: 7px;
+}
+
+.input-wrapper {
+  height: 34px;
+  width: 100%;
+
+  border: 1px solid #dce2e9;
+  border-radius: 7px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+  gap: 8px;
+
+  transition: border-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #00a1c0;
+
+  box-shadow: 0 0 0 2px
+    rgba(0, 161, 192, 0.08);
+}
+
+.input-wrapper svg {
+  width: 14px;
+  height: 14px;
+
+  stroke: #8ca1ba;
+  stroke-width: 1.5;
+  fill: none;
+
+  flex-shrink: 0;
+}
+
+.input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  font-size: 9px;
+  color: #263849;
+  background: transparent;
+}
+
+.input-wrapper input::placeholder {
+  color: #a0a8b3;
+}
+
+/* Show password */
+
+.show-password {
+  background: transparent;
+  border: none;
+
+  color: #009cbd;
+  font-size: 8px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ==============================
+   LOGIN OPTIONS
+================================ */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 11px 0 17px;
+
+  font-size: 8px;
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #718096;
+  cursor: pointer;
+}
+
+.remember-option input {
+  width: 10px;
+  height: 10px;
+
+  margin: 0;
+  accent-color: #009fbe;
+}
+
+.login-options a {
+  color: #009cbd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+/* Error message */
+
+.login-error {
+  color: #d93025;
+  font-size: 10px;
+  margin: -7px 0 10px;
+}
+
+/* ==============================
+   LOGIN BUTTON
+================================ */
+
+.login-submit {
+  width: 100%;
+  height: 34px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #009fbe;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 15px
+    rgba(0, 159, 190, 0.18);
+
+  transition: background 0.2s, transform 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-submit:hover {
+  background: #0089a6;
+  transform: translateY(-1px);
+}
+
+.login-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-submit span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ==============================
+   SECURITY MESSAGE
+================================ */
+
+.login-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+  margin-top: 14px;
+
+  color: #9aa9bc;
+  font-size: 8px;
+}
+
+.login-security svg {
+  width: 12px;
+  height: 12px;
+
+  stroke: #9aa9bc;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 650px) {
+
+  .login-modal {
+    max-width: 420px;
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+  }
+
+  .login-brand {
+    display: none;
+  }
+  .login-form-panel {
+    padding: 30px 25px;
+  }
+
+  .login-content {
+    max-width: 100%;
+  }
+
+  .login-subtitle {
+    margin-bottom: 23px;
+  }
+
+  .input-wrapper {
+    height: 42px;
+  }
+
+  .login-submit {
+    height: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .login-brand {
+    min-height: 170px;
+  }
+
+  .brand-message h1 {
+    font-size: 19px;
+  }
+
+  .login-form-panel {
+    padding: 27px 19px;
+  }
+}

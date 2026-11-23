@@ -1,16 +1,49 @@
 
 import { Routes, Route } from "react-router-dom";
 
-import { PublicLayout } from './component/layout/public/PublicLayout.jsx';
+// Public Layout
+import { PublicLayout } from "./component/layout/public/PublicLayout.jsx";
 
-import { Home } from './Pages/public/home/home.jsx';
-import Departments  from './Pages/public/departments/department.jsx';
-import  Announcements  from './Pages/public/announcements/announcement.jsx';
-import { About } from './Pages/public/about/about.jsx';
+// Public Pages
+import { Home } from "./Pages/public/home/home.jsx";
+import Departments from "./Pages/public/departments/department.jsx";
+import Announcements from "./Pages/public/announcements/announcement.jsx";
+import { About } from "./Pages/public/about/about.jsx";
 
- export function App() {
+// Authentication
+import Login from "./Pages/auth/Login.jsx";
+import ProtectedRoute from "./component/layout/protected/ProtectedRoute.jsx";
+
+// Admin Layout and Pages
+import AdminLayout from "./component/layout/admin/AdminLayout.jsx";
+import AdminDashboard from "./Pages/admin/AdminDashboard.jsx";
+import UserManagement from "./Pages/admin/userManagement/UserManagement.jsx";
+
+export function App() {
   return (
     <Routes>
+
+      {/* Authentication */}
+      <Route path="/login" element={<Login />} />
+
+      {/* Protected Admin Routes */}
+      <Route element={<ProtectedRoute />}>
+        <Route path="/admin" element={<AdminLayout />}>
+
+          {/* Admin Dashboard */}
+          <Route
+            path="dashboard"
+            element={<AdminDashboard />}
+          />
+
+          {/* User Management */}
+          <Route
+            path="users"
+            element={<UserManagement />}
+          />
+
+        </Route>
+      </Route>
 
       {/* Public Routes */}
       <Route element={<PublicLayout />}>
@@ -37,5 +70,3 @@ import { About } from './Pages/public/about/about.jsx';
     </Routes>
   );
 }
-
-
