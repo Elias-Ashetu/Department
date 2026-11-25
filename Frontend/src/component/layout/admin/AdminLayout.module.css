@@ -1,0 +1,417 @@
+
+/* =========================
+   Main Layout
+========================= */
+
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-secondary);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+.adminLayout * {
+  box-sizing: border-box;
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+.adminSidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  min-height: 100vh;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: 25px 18px;
+
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+/* University Branding */
+
+.adminBrand {
+  position: relative;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.adminBrand h2 {
+  font-size: 19px;
+  margin: 0 0 7px;
+  color: var(--text-white);
+}
+
+.adminBrand span {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.adminBrand p {
+  font-size: 13px;
+  color: var(--text-white);
+  margin: 12px 0 0;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.adminNavigation {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navTitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLink span {
+  font-size: 19px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-white);
+}
+
+.active {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.active:hover {
+  background: var(--accent-color);
+}
+
+/* =========================
+   Logout
+========================= */
+
+.adminLogout {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--danger-color);
+  color: var(--text-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.adminLogout:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Main Area
+========================= */
+
+.adminMain {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================
+   Header
+========================= */
+
+.adminHeader {
+  min-height: var(--navbar-height);
+  background: var(--bg-primary);
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.headerTitle {
+  min-width: 0;
+}
+
+.headerTitle h3 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 17px;
+}
+
+.headerTitle p {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+/* =========================
+   Admin Profile
+========================= */
+
+.adminProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.adminAvatar {
+  width: 38px;
+  height: 38px;
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.adminProfile strong,
+.adminProfile span {
+  display: block;
+}
+
+.adminProfile strong {
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.adminProfile span {
+  color: var(--text-secondary);
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+/* =========================
+   Page Content
+========================= */
+
+.adminContent {
+  width: 100%;
+  max-width: calc(var(--container-width) + 60px);
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* =========================
+   Mobile Controls
+========================= */
+
+.sidebarToggle,
+.sidebarClose {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sidebarOverlay {
+  display: none;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1024px) {
+  .adminSidebar {
+    width: 230px;
+    min-width: 230px;
+    padding: 22px 14px;
+  }
+
+  .adminContent {
+    padding: 24px 20px;
+  }
+
+  .adminHeader {
+    padding: 0 20px;
+  }
+}
+
+/* =========================
+   Mobile Sidebar
+========================= */
+
+@media (max-width: 768px) {
+  .adminLayout {
+    overflow-x: hidden;
+  }
+
+  .adminSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    min-width: 270px;
+    height: 100dvh;
+    min-height: 0;
+    z-index: 1001;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    overflow-y: auto;
+    padding: 25px 18px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarToggle {
+    display: block;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  .sidebarClose {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--text-white);
+    font-size: 28px;
+  }
+
+  .sidebarOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+  }
+
+  .adminMain {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .adminHeader {
+    min-height: 70px;
+    padding: 0 18px;
+    gap: 12px;
+  }
+
+  .headerTitle {
+    flex: 1;
+  }
+
+  .adminContent {
+    padding: 22px 18px;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 480px) {
+  .adminHeader {
+    min-height: 65px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .sidebarToggle {
+    font-size: 23px;
+    padding: 3px;
+  }
+
+  .headerTitle h3 {
+    font-size: 15px;
+  }
+
+  .headerTitle p {
+    font-size: 10px;
+  }
+
+  .adminProfile {
+    gap: 7px;
+  }
+
+  .adminProfile strong {
+    font-size: 11px;
+  }
+
+  .adminProfile span {
+    font-size: 10px;
+  }
+
+  .adminAvatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .adminContent {
+    padding: 18px 12px;
+  }
+
+  .adminSidebar {
+    width: min(270px, 85vw);
+    min-width: 0;
+  }
+}
+
+/* =========================
+   Very Small Mobile
+========================= */
+
+@media (max-width: 350px) {
+  .adminProfile strong {
+    font-size: 10px;
+  }
+
+  .adminHeader {
+    gap: 5px;
+    padding: 0 8px;
+  }
+
+  .adminContent {
+    padding: 15px 8px;
+  }
+}

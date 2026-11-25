@@ -1,0 +1,183 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 43, 58, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal {
+  background: var(--bg-primary);
+  width: 100%;
+  max-width: 500px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.header h2 {
+  font-size: 22px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 27px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.close:hover {
+  color: var(--danger-color);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-family: var(--font-family);
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(0, 159, 189, 0.1);
+}
+
+.error {
+  color: var(--danger-color);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.cancelButton,
+.createButton {
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cancelButton {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.cancelButton:hover {
+  background: var(--border-color);
+}
+
+.createButton {
+  background: var(--secondary-color);
+  color: var(--text-white);
+}
+
+.createButton:hover {
+  background: var(--accent-color);
+}
+
+.cancelButton:disabled,
+.createButton:disabled,
+.close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .overlay {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .modal {
+    padding: 20px;
+    max-height: 95vh;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .createButton {
+    width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .modal {
+    padding: 16px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .formGroup input,
+  .formGroup select {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

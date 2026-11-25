@@ -1,6 +1,10 @@
-import React from "react";
+
+
+import { useState } from "react";
+import styles from "./CreateUserModal.module.css";
+
 function CreateUserModal({ onClose, onSubmit, loading, error }) {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     employeeId: "",
@@ -20,23 +24,29 @@ function CreateUserModal({ onClose, onSubmit, loading, error }) {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="user-modal">
-        <div className="modal-header">
+    <div className={styles.overlay}>
+      <div className={styles.modal}>
+        <div className={styles.header}>
           <div>
             <h2>Create User</h2>
             <p>Create a Dean or Coordinator account.</p>
           </div>
 
-          <button type="button" className="modal-close" onClick={onClose}>
+          <button
+            type="button"
+            className={styles.close}
+            onClick={onClose}
+            disabled={loading}
+          >
             ×
           </button>
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Full Name</label>
+          <div className={styles.formGroup}>
+            <label htmlFor="create-name">Full Name</label>
             <input
+              id="create-name"
               type="text"
               name="name"
               value={formData.name}
@@ -45,10 +55,11 @@ function CreateUserModal({ onClose, onSubmit, loading, error }) {
               required
             />
           </div>
-          
-          <div className="form-group">
-            <label>Email Address</label>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="create-email">Email Address</label>
             <input
+              id="create-email"
               type="email"
               name="email"
               value={formData.email}
@@ -58,9 +69,10 @@ function CreateUserModal({ onClose, onSubmit, loading, error }) {
             />
           </div>
 
-          <div className="form-group">
-            <label>Employee ID</label>
+          <div className={styles.formGroup}>
+            <label htmlFor="create-employeeId">Employee ID</label>
             <input
+              id="create-employeeId"
               type="text"
               name="employeeId"
               value={formData.employeeId}
@@ -70,31 +82,40 @@ function CreateUserModal({ onClose, onSubmit, loading, error }) {
             />
           </div>
 
-          <div className="form-group">
-            <label>User Role</label>
-            <select name="role" value={formData.role} onChange={handleChange}>
+          <div className={styles.formGroup}>
+            <label htmlFor="create-role">User Role</label>
+            <select
+              id="create-role"
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+            >
               <option value="DEAN">Dean</option>
               <option value="COORDINATOR">Coordinator</option>
             </select>
           </div>
 
           {error && (
-            <p className="form-error" role="alert">
+            <p className={styles.error} role="alert">
               {error}
             </p>
           )}
 
-          <div className="modal-actions">
+          <div className={styles.actions}>
             <button
               type="button"
-              className="cancel-btn"
+              className={styles.cancelButton}
               onClick={onClose}
               disabled={loading}
             >
               Cancel
             </button>
 
-            <button type="submit" className="create-btn" disabled={loading}>
+            <button
+              type="submit"
+              className={styles.createButton}
+              disabled={loading}
+            >
               {loading ? "Creating..." : "Create User"}
             </button>
           </div>

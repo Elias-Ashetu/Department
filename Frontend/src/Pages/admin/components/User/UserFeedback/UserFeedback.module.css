@@ -1,0 +1,27 @@
+
+
+.success {
+  background: #e7f6ec;
+  color: #168344;
+  padding: 13px 16px;
+  border-radius: 7px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.success button {
+  border: none;
+  background: none;
+  color: #168344;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 15px 0;
+}

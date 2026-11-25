@@ -1,0 +1,33 @@
+
+.searchBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  padding: 0 14px;
+}
+
+.searchIcon {
+  font-size: 22px;
+  color: #777;
+  flex-shrink: 0;
+}
+
+.searchBox input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #183b36;
+}
+
+.searchBox input::placeholder {
+  color: #979191;
+  border: none;
+}

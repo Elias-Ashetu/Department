@@ -1,43 +1,4 @@
-:root {
-  /* Primary colors */
-  --primary-color: #0d2b3a;
-  --secondary-color: #009fbd;
-  --accent-color: #00a6c7;
 
-  /* Background colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f4f7f9;
-  --bg-dark: #0d2b3a;
-
-  /* Text colors */
-  --text-primary: #172b3a;
-  --text-secondary: #64748b;
-  --text-white: #ffffff;
-
-  /* Border */
-  --border-color: #e2e8f0;
-
-  /* Status colors */
-  --success-color: #16a34a;
-  --danger-color: #dc2626;
-  --warning-color: #f59e0b;
-
-  /* Typography */
-  --font-family: Arial, Helvetica, sans-serif;
-
-  /* Layout */
-  --container-width: 1200px;
-  --navbar-height: 70px;
-
-  /* Border radius */
-  --radius-sm: 5px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.12);
-}
 /* ABOUT PAGE */
 .about-page{
     background: var(--bg-secondary);

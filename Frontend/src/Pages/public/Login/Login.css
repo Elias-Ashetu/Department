@@ -112,13 +112,13 @@
   border-radius: 50%;
 }
 
-.university-info h3 {
+.university-info-card h3 {
   font-size: 12px;
   margin: 0 0 3px;
   font-weight: 700;
 }
 
-.university-info span {
+.university-info-card span {
   display: block;
   font-size: 7px;
   color: #9db2bd;

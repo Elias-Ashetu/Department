@@ -1,9 +1,9 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authClient } from "../../lib/auth-client";
+import { authClient } from "../../../lib/auth-client.js";
 import "./Login.css";
-import Logo from "../../assets/images/Logo.jpeg";
+import Logo from "../../../assets/images/Logo.jpeg";
 
 function Login() {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ function Login() {
               className="university-logo"
             />
 
-            <div className="university-info">
+            <div className="university-info-card">
               <h3>Wollega University</h3>
               <span>DEPARTMENT SELECTION SYSTEM</span>
             </div>
