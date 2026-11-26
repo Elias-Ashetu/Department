@@ -1,14 +1,19 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import { authClient } from "../../../lib/auth-client.js";
+import { ROLES } from "../../../roles/roles.js";
+
 import "./Login.css";
 import Logo from "../../../assets/images/Logo.jpeg";
 
 function Login() {
   const navigate = useNavigate();
 
-  // Form states
+  // ==========================================
+  // FORM STATES
+  // ==========================================
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -16,11 +21,17 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Currently implemented backend role
-  const ADMIN_ROLE = "ADMIN";
-  const ADMIN_DASHBOARD = "/admin/dashboard";
+  // ==========================================
+  // ROLE-BASED DASHBOARD ROUTES
+  // ==========================================
+  const DASHBOARD_ROUTES = {
+    [ROLES.ADMIN]: "/admin/dashboard",
+    [ROLES.DEAN]: "/dean/dashboard",
+  };
 
-  // Handle admin login
+  // ==========================================
+  // HANDLE LOGIN
+  // ==========================================
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -28,7 +39,7 @@ function Login() {
     setLoading(true);
 
     try {
-      // Step 1: Authenticate using Better Auth
+      //  Authenticate using Better Auth
       const result = await authClient.signIn.email({
         email: email.trim(),
         password,
@@ -41,28 +52,31 @@ function Login() {
         );
       }
 
-      // Step 2: Retrieve authenticated session
+      // Retrieve authenticated session
       const sessionResult = await authClient.getSession();
 
       if (sessionResult.error || !sessionResult.data?.user) {
         throw new Error("Unable to retrieve your session.");
       }
 
-      // Step 3: Get the user's role
+      // Get authenticated user's information
       const user = sessionResult.data.user;
       const role = user.role;
 
-      // Step 4: Check admin authorization
-      if (role !== ADMIN_ROLE) {
+      //  Find dashboard based on user role
+      const dashboardPath = DASHBOARD_ROUTES[role];
+
+      // Check whether the user's role has an assigned dashboard
+      if (!dashboardPath) {
         await authClient.signOut();
 
         throw new Error(
-          "Access denied. Only administrators can access this portal."
+          "Your account does not have an available dashboard. Please contact the administrator."
         );
       }
 
-      // Step 5: Redirect admin to dashboard
-      navigate(ADMIN_DASHBOARD, { replace: true });
+      //  Redirect user to the appropriate dashboard
+      navigate(dashboardPath, { replace: true });
 
     } catch (err) {
       setError(
@@ -73,6 +87,9 @@ function Login() {
     }
   };
 
+  // ==========================================
+  // LOGIN UI
+  // ==========================================
   return (
     <div className="login-page">
 
@@ -80,7 +97,9 @@ function Login() {
 
       <div className="login-modal">
 
-        {/* LEFT BRANDING SECTION */}
+        {/* ======================================
+            LEFT BRANDING SECTION
+        ====================================== */}
         <section className="login-brand">
 
           <div className="university-brand">
@@ -132,7 +151,9 @@ function Login() {
 
         </section>
 
-        {/* RIGHT LOGIN SECTION */}
+        {/* ======================================
+            RIGHT LOGIN SECTION
+        ====================================== */}
         <section className="login-form-panel">
 
           <button

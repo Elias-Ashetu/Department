@@ -1,0 +1,426 @@
+
+
+/* =========================
+   Main Layout
+========================= */
+
+.deanLayout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-secondary);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+.deanLayout * {
+  box-sizing: border-box;
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+.deanSidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  min-height: 100vh;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: 25px 18px;
+
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+/* University Branding */
+
+.deanBrand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.deanBrand h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  margin: 0 0 7px;
+  font-family: var(--font-family);
+  color: var(--text-white);
+}
+
+.deanBrand span {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.deanBrand p {
+  font-size: 13px;
+  color: var(--text-white);
+  margin: 12px 0 0;
+}
+.deanLogo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.deanNavigation {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLink span {
+  font-size: 19px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-white);
+}
+
+.active {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.active:hover {
+  background: var(--accent-color);
+}
+
+/* =========================
+   Logout
+========================= */
+
+.deanLogout {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--danger-color);
+  color: var(--text-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.deanLogout:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Main Area
+========================= */
+
+.deanMain {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================
+   Header
+========================= */
+
+.deanHeader {
+  min-height: var(--navbar-height);
+  background: var(--bg-primary);
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.headerTitle {
+  min-width: 0;
+}
+
+.headerTitle h3 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 17px;
+}
+
+.headerTitle p {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+/* =========================
+   Dean Profile
+========================= */
+
+.deanProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.deanAvatar {
+  width: 38px;
+  height: 38px;
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.deanProfile strong,
+.deanProfile span {
+  display: block;
+}
+
+.deanProfile strong {
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.deanProfile span {
+  color: var(--text-secondary);
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+/* =========================
+   Page Content
+========================= */
+
+.deanContent {
+  width: 100%;
+  max-width: calc(var(--container-width) + 60px);
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* =========================
+   Mobile Controls
+========================= */
+
+.sidebarToggle,
+.sidebarClose {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sidebarOverlay {
+  display: none;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1024px) {
+  .deanSidebar {
+    width: 230px;
+    min-width: 230px;
+    padding: 22px 14px;
+  }
+
+  .deanContent {
+    padding: 24px 20px;
+  }
+
+  .deanHeader {
+    padding: 0 20px;
+  }
+}
+
+/* =========================
+   Mobile Sidebar
+========================= */
+
+@media (max-width: 768px) {
+  .deanLayout {
+    overflow-x: hidden;
+  }
+
+  .deanSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    min-width: 270px;
+    height: 100dvh;
+    min-height: 0;
+    z-index: 1001;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    overflow-y: auto;
+    padding: 25px 18px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarToggle {
+    display: block;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  .sidebarClose {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--text-white);
+    font-size: 28px;
+  }
+
+  .sidebarOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+  }
+
+  .deanMain {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .deanHeader {
+    min-height: 70px;
+    padding: 0 18px;
+    gap: 12px;
+  }
+
+  .headerTitle {
+    flex: 1;
+  }
+
+  .deanContent {
+    padding: 22px 18px;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 480px) {
+  .deanHeader {
+    min-height: 65px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .sidebarToggle {
+    font-size: 23px;
+    padding: 3px;
+  }
+
+  .headerTitle h3 {
+    font-size: 15px;
+  }
+
+  .headerTitle p {
+    font-size: 10px;
+  }
+
+  .deanProfile {
+    gap: 7px;
+  }
+
+  .deanProfile strong {
+    font-size: 11px;
+  }
+
+  .deanProfile span {
+    font-size: 10px;
+  }
+
+  .deanAvatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .deanContent {
+    padding: 18px 12px;
+  }
+
+  .deanSidebar {
+    width: min(270px, 85vw);
+    min-width: 0;
+  }
+}
+
+/* =========================
+   Very Small Mobile
+========================= */
+
+@media (max-width: 350px) {
+  .deanProfile strong {
+    font-size: 10px;
+  }
+
+  .deanHeader {
+    gap: 5px;
+    padding: 0 8px;
+  }
+
+  .deanContent {
+    padding: 15px 8px;
+  }
+}
