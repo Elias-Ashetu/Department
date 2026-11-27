@@ -28,7 +28,6 @@ import AdminDashboard from "./Pages/admin/AdminDashboard.jsx";
 import UserManagement from "./Pages/admin/userManagement/UserManagement.jsx";
 
 // Dean Layout and Pages
-import DeanLayout from "./component/layout/dean/DeanLayout.jsx";
 import DeanDashboard from "./Pages/dean/Dashboard/DeanDashboard.jsx";
 import Department from "./Pages/dean/department/department.jsx";
 

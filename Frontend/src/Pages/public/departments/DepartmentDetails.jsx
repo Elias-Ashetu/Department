@@ -1,8 +1,8 @@
 
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getDepartmentById } from "../../../services/departmentService";
-import "./department.css";
+import { getDepartmentById } from "../../../services/departmentinfo/departmentinfoService.js";
+import styles from "./department.module.css";
 
 function DepartmentDetails() {
   const { id } = useParams();
@@ -40,13 +40,13 @@ function DepartmentDetails() {
   }
 
   return (
-    <div className="department-details">
+    <div className={styles.departmentDetails}>
 
-      <Link to="/departments" className="back-link">
+      <Link to="/departments" className={styles.backLink}>
         ← Back to Departments
       </Link>
 
-      <div className="details-hero">
+      <div className={styles.detailsHero}>
         <div>
           <span>{department.code}</span>
           <h1>{department.name}</h1>
@@ -56,27 +56,29 @@ function DepartmentDetails() {
         </div>
       </div>
 
-      <section className="details-section">
+      <section className={styles.detailsSection}>
         <h2>About the Department</h2>
         <p>
           {department.description ||
             "Department description is not available yet."}
         </p>
+
         <h2>Vision</h2>
         <p>
           {department.vision || "Vision information is not available yet."}
         </p>
-     
+
         <h2>Mission</h2>
         <p>
           {department.mission || "Mission information is not available yet."}
         </p>
-     
-  <h2>Objectives</h2>
-  <p>
-    {department.objectives ||
-      "Objectives information is not available yet."}      
-  </p> 
+
+        <h2>Objectives</h2>
+        <p>
+          {department.objectives ||
+            "Objectives information is not available yet."}
+        </p>
+
         <h2>Department Head</h2>
 
         {department.headAssignments?.length > 0 ? (
