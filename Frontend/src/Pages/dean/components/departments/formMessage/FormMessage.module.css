@@ -1,0 +1,70 @@
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Shared message styles */
+.successMessage,
+.errorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm, 5px);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.successMessage p,
+.errorMessage p {
+  margin: 0;
+}
+
+/* Success message */
+.successMessage {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+/* Error message */
+.errorMessage {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+/* Message icon */
+.messageIcon {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.successMessage .messageIcon {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.errorMessage .messageIcon {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .successMessage,
+  .errorMessage {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+}

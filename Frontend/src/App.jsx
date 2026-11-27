@@ -19,17 +19,25 @@ import { ROLES } from "./roles/roles.js";
 
 // Admin Layout and Pages
 import AdminLayout from "./component/layout/admin/AdminLayout.jsx";
+import DeanLayout from "./component/layout/Dean/DeanLayout.jsx";
+
+// ==========================================
+// ADMIN PAGES
+// ==========================================
 import AdminDashboard from "./Pages/admin/AdminDashboard.jsx";
 import UserManagement from "./Pages/admin/userManagement/UserManagement.jsx";
 
 // Dean Layout and Pages
 import DeanLayout from "./component/layout/dean/DeanLayout.jsx";
 import DeanDashboard from "./Pages/dean/Dashboard/DeanDashboard.jsx";
+import Department from "./Pages/dean/department/department.jsx";
 
 export function App() {
   return (
-    <Routes>
-      {/* Login */}
+<Routes>
+      {/* ======================================
+           AUTHENTICATION ROUTES
+      ====================================== */}
       <Route path="/login" element={<Login />} />
 
       {/* Public Routes */}
@@ -54,7 +62,27 @@ export function App() {
       <Route element={<ProtectedRoute allowedRoles={[ROLES.DEAN]} />}>
         <Route path="/dean" element={<DeanLayout />}>
           <Route path="dashboard" element={<DeanDashboard />} />
+          <Route path="department" element={<Department />} />
         </Route>
+      </Route>
+
+      {/* ======================================
+           PUBLIC ROUTES
+      ====================================== */}
+      <Route element={<PublicLayout />}>
+        {/* Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* Departments */}
+        <Route path="/departments" element={<Departments />} />
+
+        {/* Announcements */}
+        <Route path="/announcements" element={<Announcements />} />
+
+        {/* About */}
+        <Route path="/about" element={<About />} />
+        {/* Unauthorized Page */}
+        <Route path="/unauthorized" element={<Unauthorized />} />
       </Route>
     </Routes>
   );

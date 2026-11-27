@@ -1,0 +1,83 @@
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* Shared button styles */
+.formActions button {
+  min-height: 44px;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm, 5px);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+/* Reset button */
+.resetButton {
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-primary, #172b3a);
+}
+
+.resetButton:hover:not(:disabled) {
+  background: var(--bg-secondary, #f4f7f9);
+  border-color: #cbd5e1;
+}
+
+/* Submit button */
+.submitButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--secondary-color, #009fbd);
+  border: 1px solid var(--secondary-color, #009fbd);
+  color: #ffffff;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #0086a1;
+  border-color: #0086a1;
+}
+
+/* Disabled buttons */
+.formActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .formActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .formActions button {
+    width: 100%;
+  }
+}

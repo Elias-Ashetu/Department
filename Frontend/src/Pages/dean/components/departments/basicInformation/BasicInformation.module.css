@@ -1,0 +1,95 @@
+
+.formSection {
+  width: 100%;
+}
+
+/* Section heading */
+.sectionHeader {
+  margin-bottom: 1.25rem;
+}
+
+.sectionHeader h3 {
+  margin: 0;
+  color: var(--text-primary, #172b3a);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sectionHeader p {
+  margin: 0.4rem 0 0;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Form grid */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Individual form fields */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.formGroup label {
+  color: var(--text-primary, #172b3a);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.formGroup label span {
+  color: var(--danger-color, #dc2626);
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-sm, 5px);
+  outline: none;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #172b3a);
+  font-family: inherit;
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formGroup input::placeholder {
+  color: #94a3b8;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: var(--secondary-color, #009fbd);
+  box-shadow: 0 0 0 3px rgba(0, 159, 189, 0.1);
+}
+
+.formGroup select:disabled {
+  background: var(--bg-secondary, #f4f7f9);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* Campus error */
+.fieldError {
+  margin: 0;
+  color: var(--danger-color, #dc2626);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

@@ -30,9 +30,9 @@ function DeanLayout() {
 
   const navigationItems = [
     { path: "/dean/dashboard", icon: "▦", label: "Dashboard" },
-    { path: "/dean/head", icon: "♙", label: "Department Head" },
+    { path: "/dean/department", icon: "♙", label: "Departments" },
+    { path: "/dean/departmentHead", icon: "▤", label: "Departments Head" },
     { path: "/dean/students", icon: "♟", label: "Students" },
-    { path: "/dean/departments", icon: "▤", label: "Departments" },
     { path: "/dean/announcements", icon: "▣", label: "Announcements" },
     { path: "/dean/settings", icon: "⚙", label: "Settings" },
   ];
