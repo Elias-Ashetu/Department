@@ -1,0 +1,169 @@
+
+/* ======================================
+   DASHBOARD CONTAINER
+====================================== */
+
+.dashboard {
+  width: 100%;
+  min-height: 100%;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+
+
+/* ======================================
+   WELCOME SECTION
+====================================== */
+
+.welcome {
+  background: var(--bg-primary);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  border-left: 0.3rem solid var(--secondary-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.75rem;
+}
+
+.welcome h1 {
+  margin: 0 0 0.6rem;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.welcome p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* ======================================
+   STATISTICS GRID
+====================================== */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+
+/* ======================================
+   STATISTICS CARD
+====================================== */
+
+.statCard {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-md);
+}
+
+.statCard h3 {
+  margin: 0 0 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.statCard p {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+/* ======================================
+   RECENT ACTIVITIES
+====================================== */
+
+.activities {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.activities h2 {
+  margin: 0 0 1.25rem;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.activities p {
+  margin: 0;
+  padding: 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+/* ======================================
+   RESPONSIVE DESIGN
+====================================== */
+
+/* Tablet */
+@media (max-width: 64rem) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 40rem) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .welcome {
+    padding: 1.25rem;
+  }
+
+  .welcome h1 {
+    font-size: 1.4rem;
+  }
+
+  .welcome p {
+    font-size: 0.85rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+  }
+
+  .statCard p {
+    font-size: 1.75rem;
+  }
+
+  .activities {
+    padding: 1.25rem;
+  }
+
+  .activities h2 {
+    font-size: 1.05rem;
+  }
+}

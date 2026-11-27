@@ -38,7 +38,7 @@ async function handleResponse(response, errorMessage) {
 }
 
 // ==========================================
-// 1. Create Dean or Coordinator
+//  Create Dean or Coordinator
 // ==========================================
 
 export async function createUser(userData) {
@@ -69,7 +69,7 @@ export async function createUser(userData) {
 };
 
 // ==========================================
-// 2. Get All Users
+//  Get All Users
 // Supports:
 // - Search by name, email, or username
 // - Role filtering
@@ -126,7 +126,7 @@ export async function getAllUsers({
 }
 
 // ==========================================
-// 3. Get One User by ID
+// Get One User by ID
 // ==========================================
 
 export async function getUserById(id) {
@@ -150,7 +150,7 @@ export async function getUserById(id) {
 }
 
 // ==========================================
-// 4. Update Dean or Coordinator
+//  Update Dean or Coordinator
 // ==========================================
 
 export async function updateUser(id, userData) {
@@ -183,7 +183,7 @@ export async function updateUser(id, userData) {
 }
 
 // ==========================================
-// 5. Deactivate Dean or Coordinator
+//  Deactivate Dean or Coordinator
 // ==========================================
 
 export async function deleteUser(id) {

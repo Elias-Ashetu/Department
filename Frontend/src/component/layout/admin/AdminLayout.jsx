@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { authClient } from "../../../lib/auth-client";
+import Logo from "../../../assets/images/logo.jpeg";
 import styles from "./AdminLayout.module.css";
 
 function AdminLayout() {
@@ -56,9 +57,11 @@ function AdminLayout() {
         }`}
       >
         <div className={styles.adminBrand}>
-          <h2>Wollega University</h2>
-          <span>Department Selection System</span>
-          <p>Admin Panel</p>
+          <img src={Logo} alt="Logo" className={styles.adminLogo} />
+          <div>
+            <h1>WIT</h1>
+            <span>Admin Dashboard</span>
+          </div>
 
           <button
             type="button"
@@ -71,7 +74,6 @@ function AdminLayout() {
         </div>
 
         <nav className={styles.adminNavigation}>
-          <p className={styles.navTitle}>MAIN MENU</p>
 
           {navigationItems.map((item) => (
             <NavLink
