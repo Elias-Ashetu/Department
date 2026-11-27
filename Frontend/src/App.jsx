@@ -29,7 +29,7 @@ import { ROLES } from "./roles/roles.js";
 // DASHBOARD LAYOUTS
 // ==========================================
 import AdminLayout from "./component/layout/admin/AdminLayout.jsx";
-import DeanLayout from "./component/layout/dean/DeanLayout.jsx";
+import DeanLayout from "./component/layout/Dean/DeanLayout.jsx";
 
 // ==========================================
 // ADMIN PAGES
@@ -41,10 +41,11 @@ import UserManagement from "./Pages/admin/userManagement/UserManagement.jsx";
 // DEAN PAGES
 // ==========================================
 import DeanDashboard from "./Pages/dean/Dashboard/DeanDashboard.jsx";
+import Department from "./Pages/dean/department/department.jsx";
 
 export function App() {
   return (
-    <Routes>
+<Routes>
       {/* ======================================
            AUTHENTICATION ROUTES
       ====================================== */}
@@ -60,7 +61,6 @@ export function App() {
 
           {/* Admin User Management */}
           <Route path="users" element={<UserManagement />} />
-          
         </Route>
       </Route>
 
@@ -69,11 +69,10 @@ export function App() {
       ====================================== */}
       <Route element={<ProtectedRoute allowedRoles={[ROLES.DEAN]} />}>
         <Route path="/dean" element={<DeanLayout />}>
-          {/* Dean Dashboard */}
           <Route path="dashboard" element={<DeanDashboard />} />
+          <Route path="department" element={<Department />} />
         </Route>
       </Route>
-
 
       {/* ======================================
            PUBLIC ROUTES
