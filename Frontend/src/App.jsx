@@ -4,12 +4,11 @@ import { Routes, Route } from "react-router-dom";
 // Public Layout
 import { PublicLayout } from "./component/layout/public/PublicLayout.jsx";
 
-// Public Pages
-import { Home } from "./Pages/public/home/home.jsx";
-import Departments from "./Pages/public/departments/department.jsx";
-import Announcements from "./Pages/public/announcements/announcement.jsx";
-import  About  from "./Pages/public/about/about.jsx";
-
+import { Home } from './Pages/public/home/home.jsx';
+import Departments  from './Pages/public/departments/department.jsx';
+import  Announcements  from './Pages/public/announcements/announcement.jsx';
+import  About from './Pages/public/about/about.jsx';
+import DepartmentDetails from "./Pages/public/departments/DepartmentDetails.jsx";
 // Authentication
 import Login from "./Pages/public/Login/Login.jsx";
 import ProtectedRoute from "./component/layout/protected/ProtectedRoute.jsx";
@@ -63,6 +62,11 @@ export function App() {
         <Route
           path="/about"
           element={<About />}
+        />
+
+        <Route
+        path="departments/:id"
+        element={<DepartmentDetails />}
         />
 
       </Route>
